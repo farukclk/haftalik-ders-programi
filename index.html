@@ -4,9 +4,28 @@
         <style>
             body {
                 text-align: center;
+                background-color: black;
+                color: yellow;
             }
+
+
+
             input {
-                margin: 10px;
+                margin: 14px;
+               
+            }
+
+            #title {
+                color:aqua;
+            }
+
+            button {
+                padding: 10px;
+                font-weight: bold;
+                font-size: x-large;
+                border: aqua;
+                border:10px;
+                background-color: aqua;
             }
         </style>
 
@@ -15,7 +34,7 @@
     </head>
 
     <body>
-        <h1>ilgilnedigniz dersleri seçin</h1>
+        <h1 id="title">ilgilnedigniz dersleri seçin</h1>
         <form action="run.html" method="POST" id="form">
             <h3 id = "course_list"></h3>
 
@@ -25,13 +44,27 @@
     </body>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
         /*
         ilgilenen ders listesini sec ve cookie olarak kaydet
         */
 
        var text = "";
-       var all_course_names = ["mat101","BM207","BM211"];
+       var all_course_names = ["MAT102","FIZ156","PHYS104"];
 
        var cl = document.getElementById("course_list");
 

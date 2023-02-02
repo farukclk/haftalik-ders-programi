@@ -2,22 +2,24 @@
 
 */
 var dersler = 
-[
-["mat101-1","mat-2"],       ["mat101-3"],        ["mat101-5","BM207-1"] ,          [],                                  [],
-["mat101-1","mat-2"],         ["mat101-3"],         ["mat101-5","BM207-1"],      ["BM211-1","ENG203-7","ENG203-8"],         ["ENG203-11","ENG203-12"],
-["mat101-3","mat101-4"],          ["mat101-1"],      ["mat101-6","mat101-7","BM207-1"],   ["BM211-1","ENG203-7","ENG203-8"],                             [],
-[],                      [],           [],                        ["BM211-1"],                                  [],
-[],                      [],           [],                        ["BM211-1"],                                  [],  //12
-["CENG213-0"],                      [],           [],                        ["BM211-1"],                                  [],  // 1.30
-
-];
+[//pzt                                                                 //sali                                                                   //car                                                                                 //per                                                                                                  //cuma
+["MAT102-1","FIZ156-1","PHYS104-1","PHYS104-2"],           ["MAT102-2","MAT102-5","PHYS104-9","PHYS104-16","PHYS104-17"],                   ["FIZ156-8","PHYS104-5","PHYS104-11","PHYS104-13"] ,                                  ["MAT102-5"],                                                                                    ["FIZ156-14","PHYS104-15","PHYS104-18"], //8
+["MAT102-1","FIZ156-1","PHYS104-1","PHYS104-2"],           ["MAT102-2","MAT102-5","PHYS104-9","PHYS104-16","PHYS104-17"],                   ["FIZ156-8","PHYS104-5","PHYS104-11","PHYS104-13"] ,                                  ["MAT102-5"],                                                                                     ["FIZ156-14","PHYS104-15","PHYS104-18"],  //9
+["MAT102-2","FIZ156-2","PHYS104-3","PHYS104-4"],           ["MAT102-1","MAT102-6","FIZ156-5","PHYS104-10","PHYS104-18"],                    ["FIZ156-9","PHYS104-7","PHYS104-12","PHYS104-14"] ,                                  ["MAT102-6","PHYS104-6","PHYS104-16"],                                                            ["FIZ156-15","PHYS104-14","PHYS104-17"],  // 10
+["MAT102-2","FIZ156-2","PHYS104-3","PHYS104-4"],           ["MAT102-1","MAT102-6","FIZ156-5","PHYS104-10","PHYS104-18"],                    ["FIZ156-9","PHYS104-7","PHYS104-12","PHYS104-14"] ,                                  ["MAT102-6","PHYS104-6","PHYS104-16"],                                                            ["FIZ156-15","PHYS104-14","PHYS104-17"],  // 11
+[],                                                         [],                                                                             [] ,                                                                                  [],                                                                                               [],  //12
+["MAT102-3","FIZ156-3","PHYS104-5","PHYS104-6"],           ["MAT102-7","MAT102-9","FIZ156-6","PHYS104-11","PHYS104-19"],                    ["MAT102-4","FIZ156-10","PHYS104-1","PHYS104-9","PHYS104-15"] ,                       ["MAT102-9","MAT102-8","FIZ156-12","PHYS104-2","PHYS104-8","PHYS104-20"],                          ["PHYS104-8","PHYS104-13"],  // 1
+["MAT102-3","FIZ156-3","PHYS104-5","PHYS104-6"],          ["MAT102-7","MAT102-9","FIZ156-6","PHYS104-11","PHYS104-19"],                     ["MAT102-4","FIZ156-10","PHYS104-1","PHYS104-9","PHYS104-15"] ,                       ["MAT102-9","MAT102-8","FIZ156-12","PHYS104-2","PHYS104-8","PHYS104-20"],                           ["PHYS104-8","PHYS104-13"],   // 2
+["MAT102-4","FIZ156-4","PHYS104-7"],                       ["MAT102-8","FIZ156-7","PHYS104-12","PHYS104-20"],                               ["MAT102-3","FIZ156-11","PHYS104-3","PHYS104-10"] ,                                   ["MAT102-7","FIZ156-13","PHYS104-4","PHYS104-19"],                                                  [],    // 3 
+["MAT102-4","FIZ156-4","PHYS104-7"],                        ["MAT102-8","FIZ156-7","PHYS104-12","PHYS104-20"],                              ["MAT102-3","FIZ156-11","PHYS104-3","PHYS104-10"] ,                                   ["MAT102-7","FIZ156-13","PHYS104-4","PHYS104-19"],                                                  [],    // 4
+]; 
 
 var ders_isimleri = sessionStorage.selected_courses;
 
 //sube ismleriyle
 var secilen_dersler = []
 var secilmeyen_dersler = []
-var saatler = Array("8:30 - 9:20","9:30 - 10:20","10:30 - 11:20","11:30 - 12:20", "12:30 - 13:20", "13:30 - 14:20","14:30 - 15:20","15:30 - 16:20","16:30 - 17:20");
+var saatler = Array("8:30-9:20","9:30-10:20","10:30 - 11:20","11:30 - 12:20", "12:30 - 13:20", "13:30 - 14:20","14:30 - 15:20","15:30 - 16:20","16:30 - 17:20");
  
 
 
@@ -54,11 +56,11 @@ for (var i = 0 ; i< dersler.length; i++) {
 index();
 
 function index(){
-    text = "  <table border='1' cellpadding='1' cellspacing='3'><tr>";
-    text += "<tr><td></td><td>Pazartesi</td> <td>Salı</td> <td>Çarşamba</td> <td>persembe</td> <td>cuma</td>";
+    text = "  <table id='" + "saasd" +" border='1' cellpadding='1' cellspacing='2'>";
+    text += "<tr class='days' ><td><a href='index.html'>Anasayfa</a></td><td class='days'>Pazartesi</td> <td class='days'>Salı</td> <td class='days'>Çarşamba</td> <td class='days'>persembe</td> <td class='days'>cuma</td>";
     var id=0;
     for(var i = 0; i < saatler.length; i++) {
-        var td= "<td>" + saatler[i]+ "</td>";
+        var td= "<td class='times'>"+saatler[i]+"</td>";
         for (var j=0;j<5;j++) {
             
             td+= "<td id='" + id++ + "'>" + "<select style='visibility:visible'></select>"+ "</td>";
@@ -130,7 +132,7 @@ function options_list_clear(id) {
 function optionEkle(id) {
     var tmp = dersler[id];
     
-     if (id < 30 && tmp.length>0) {
+     if (id < 40 && tmp.length>0) {
         options_list_clear(id);
         
         var secilmeyen_dersler_m = secilmeyen_dersler.join();
@@ -229,6 +231,5 @@ function option_click(id) {
     tum_optionlari_yenile();
 
 } 
-
 
 
