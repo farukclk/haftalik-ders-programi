@@ -3,6 +3,7 @@
 body {
     text-align: center;
     font-size: 24px;
+    background-color: black;
 }
 
 
@@ -23,4 +24,20 @@ table {
 select {
     width: 120px;
     height: 40px;
+}
+
+.days {
+    background-color: red;
+    color: yellow;
+
+}
+
+.times {
+    color: blue;
+    font-weight: bold;
+}
+
+select {
+    background-color: rgb(48, 47, 47);
+    color: white;
 }

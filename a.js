@@ -15,6 +15,7 @@ var dersler =
 ]; 
 
 var ders_isimleri = sessionStorage.selected_courses;
+var coloar_list = sessionStorage.selected_courses_coloar_list;
 
 //sube ismleriyle
 var secilen_dersler = []
@@ -23,13 +24,25 @@ var saatler = Array("8:30-9:20","9:30-10:20","10:30 - 11:20","11:30 - 12:20", "1
  
 
 
-
+// split courses
 if (ders_isimleri.includes(",")) {
     ders_isimleri = ders_isimleri.split(",");
 }
 else {
     ders_isimleri = [ders_isimleri];
 }
+
+
+// split coloars
+if (coloar_list.includes(",")) {
+    coloar_list = coloar_list.split(",");
+}
+else {
+    coloar_list = [coloar_list];
+}
+
+
+
 
 
 var tmp_list=  [];
@@ -141,15 +154,22 @@ function optionEkle(id) {
        
         var yeni_tmp = [];
         var secilen_var = false;
+        var secilen_ders = "";
 
         var x = document.getElementById(id).getElementsByTagName("select").item(0);
+
+
+        //set default coloar
+        x.removeAttribute("style");
+
         
      
         //secilen ve secilebilir ders listesi kontrol 
         for (var i of tmp) {
              if (secilen_dersler.includes(i)) {
                 yeni_tmp.push(i);
-                secilen_var = true; 
+                secilen_var = true;
+                secilen_ders = i;
             }
             else if (!secilmeyen_dersler.includes(i)) {
                 yeni_tmp.push(i);
@@ -176,25 +196,41 @@ function optionEkle(id) {
         }
 
 
+
+        //------------------------
+        // 
         else if (yeni_tmp.length != 1 && secilen_var) {
             for (var i of yeni_tmp) {
                 if (!secilen_dersler.includes(i))  {
                     secilmeyen_dersler.push(i);
                 }
             }
+
+           
             tum_optionlari_yenile();
             return;
 
         }
+
+
         else if (yeni_tmp.length == 1 && secilen_var) {
             x.add(newOption(id, yeni_tmp[0]));
+           
+            x.style.backgroundColor = coloar_list[ders_isimleri.indexOf(yeni_tmp[0].split("-")[0])];
+
         }
+
+        
+
+        //------------
 
      
        
         else  if (yeni_tmp.length == 0 ) {
                 x.add(newOption(id, ""))
         }
+
+
         else if(yeni_tmp.length > 0){
             x.add(newOption(id, "ders seç")) 
              for (var i of yeni_tmp) {
