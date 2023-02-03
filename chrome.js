@@ -23,7 +23,6 @@ var secilmeyen_dersler = []
 var saatler = Array("8:30-9:20","9:30-10:20","10:30 - 11:20","11:30 - 12:20", "12:30 - 13:20", "13:30 - 14:20","14:30 - 15:20","15:30 - 16:20","16:30 - 17:20");
  
 
-console.log("asdsaaaaaa");
 
 // split courses
 if (ders_isimleri.includes(",")) {
@@ -148,7 +147,7 @@ function optionEkle(id) {
 
     var tmp = dersler[id];
     
-     if (id < 45 && tmp.length>0) {
+     if (tmp.length>0) {
         options_list_clear(id);
         
         var secilmeyen_dersler_m = secilmeyen_dersler.join();

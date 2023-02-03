@@ -1,6 +1,3 @@
-/*
-
-*/
 var dersler = 
 [//pzt                                                                                                   //sali                                                                                                             //car                                                                                 //per                                                                                                                         //cuma
 ["MAT102-1","FIZ156-1","PHYS104-1","PHYS104-2"],                                 ["MAT102-2","MAT102-5","PHYS104-9","PHYS104-16","PHYS104-17"],                                                  ["FIZ156-8","PHYS104-5","PHYS104-11","PHYS104-13"] ,                                               ["MAT102-5"],                                                                                                              ["FIZ156-14","PHYS104-15","PHYS104-18"], //8
@@ -18,8 +15,9 @@ var ders_isimleri = sessionStorage.selected_courses;
 var coloar_list = sessionStorage.selected_courses_coloar_list;
 
 //sube ismleriyle
-var secilen_dersler = []
-var secilmeyen_dersler = []
+
+var secilen_dersler = [];
+var secilmeyen_dersler = [];
 var saatler = Array("8:30-9:20","9:30-10:20","10:30 - 11:20","11:30 - 12:20", "12:30 - 13:20", "13:30 - 14:20","14:30 - 15:20","15:30 - 16:20","16:30 - 17:20");
  
 
@@ -145,7 +143,7 @@ function options_list_clear(id) {
 function optionEkle(id) {
     var tmp = dersler[id];
     
-     if (tmp.length>0) {
+    if (tmp.length>0) {
         options_list_clear(id);
         
         var secilmeyen_dersler_m = secilmeyen_dersler.join();
@@ -161,6 +159,9 @@ function optionEkle(id) {
 
         //set default coloar
         x.removeAttribute("style");
+        
+        //remove disbled
+        x.removeAttribute("disabled");
        
        
      
@@ -215,7 +216,7 @@ function optionEkle(id) {
 
         else if (yeni_tmp.length == 1 && secilen_var) {
             x.add(newOption(id, yeni_tmp[0]));
-
+            x.disabled = "disabled";
             
             // change coloar
             x.style.backgroundColor = coloar_list[ders_isimleri.indexOf(yeni_tmp[0].split("-")[0])];
@@ -229,7 +230,7 @@ function optionEkle(id) {
      
        
         else  if (yeni_tmp.length == 0 ) {
-                x.add(newOption(id, ""))
+                x.disabled = "disabled";
         }
 
 
@@ -252,21 +253,23 @@ function newOption(id, m) {
     var option = document.createElement("option");
     option.text = m;
     option.id = id ;
-    option.setAttribute("onClick","option_click(id);");
+    option.setAttribute("onclick","option_click(id);");
     return option;
 }
 
 function option_click(id) { // id = clicked option id
-
+  
     var opt = document.getElementById(id);
     var text = opt.text;
 
-    if (text.includes("ders"))
+    if (text.includes("ders")) {
         return;
-        
-    else if (text == "") {
-
     }
+
+    else if (text == "") { // check if options is null
+        return;
+    }
+
     else if (!secilen_dersler.includes(text))
         secilen_dersler.push(text);
 
