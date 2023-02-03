@@ -59,15 +59,17 @@
         */
 
 
-        var all_course_names = ["MAT102","FIZ156","PHYS104"];
+        var all_course_names = ["MAT102","FIZ156","PHYS104","ENG204"];
 
         var cl = document.getElementById("course_list");
         var text = "";
         var all_courses_coloar_list = [];
 
+        
+        //------------------------------- set course colors  -------------------------------
         if (sessionStorage.all_courses_coloar_list == null) {
             for(var i=0;i < all_course_names.length; i++) {
-                all_courses_coloar_list.push("#e66465");
+                all_courses_coloar_list.push("#e66465");   // default color
             }
         }
         else {
@@ -80,9 +82,9 @@
             else {
                 all_courses_coloar_list = [all_courses_coloar_list];
             }
-
-        
         }
+
+        //-----------------------------------------------------------------------------------
       
         
         for (var i = 0; i < all_course_names.length; i++) {
@@ -136,7 +138,6 @@
 
         
         
-
 
     </script>
 
