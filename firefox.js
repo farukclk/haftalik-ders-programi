@@ -145,7 +145,7 @@ function options_list_clear(id) {
 function optionEkle(id) {
     var tmp = dersler[id];
     
-     if (id < 40 && tmp.length>0) {
+     if (tmp.length>0) {
         options_list_clear(id);
         
         var secilmeyen_dersler_m = secilmeyen_dersler.join();
@@ -216,9 +216,7 @@ function optionEkle(id) {
         else if (yeni_tmp.length == 1 && secilen_var) {
             x.add(newOption(id, yeni_tmp[0]));
 
-            console.log("renk degistir");
             
-
             // change coloar
             x.style.backgroundColor = coloar_list[ders_isimleri.indexOf(yeni_tmp[0].split("-")[0])];
 
@@ -258,13 +256,17 @@ function newOption(id, m) {
     return option;
 }
 
-function option_click(id) {
+function option_click(id) { // id = clicked option id
 
     var opt = document.getElementById(id);
     var text = opt.text;
 
     if (text.includes("ders"))
         return;
+        
+    else if (text == "") {
+
+    }
     else if (!secilen_dersler.includes(text))
         secilen_dersler.push(text);
 

@@ -148,7 +148,7 @@ function optionEkle(id) {
 
     var tmp = dersler[id];
     
-     if (id < 40 && tmp.length>0) {
+     if (id < 45 && tmp.length>0) {
         options_list_clear(id);
         
         var secilmeyen_dersler_m = secilmeyen_dersler.join();
