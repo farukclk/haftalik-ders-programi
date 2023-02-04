@@ -75,7 +75,6 @@ function index(){
         for (var j=0;j<5;j++) {
             
             td+= "<td id='" + id++ + "'>" + '<select onchange="select_click(event);"' + "style='visibility:visible'></select>"+ "</td>";
-         //   td+= "<td id='" + id++ + "'>" + "<select style='visibility:visible'></select>"+ "</td>";
    
         }
         text += "<tr>" + td  + "</tr>";
@@ -255,8 +254,6 @@ function newOption(id, m) {
     var option = document.createElement("option");
     option.text = m;
     option.id = id ;
-  //  option.setAttribute("onclick", "checkAlert(event)");
-   // option.setAttribute("onclick","option_click('" + id + "');");
     return option;
 }
 
