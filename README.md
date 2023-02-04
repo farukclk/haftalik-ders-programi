@@ -3,7 +3,7 @@ haftalik ders programı ayarlama uygulaması
 
 <br>
 
-demo app : <a href="http://demo156.epizy.com/" target="_blank">http://demo156.epizy.com/<a>
+demo app : <a href="http://demo156.epizy.com/">http://demo156.epizy.com/<a>
 
   <br>
   
