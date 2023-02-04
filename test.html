@@ -17,19 +17,21 @@
 
       <div id = "deneme"></div>
     
-      <div style="background-color: red;" id="silinebilir_dersler">a</div> 
-            
-        <button onclick="option_click(1)">asdasd</button>
-    
+        
 
-        <select onclick="alert('select');">
-            <option onclick="alert('option');">asdas</option>
-            <option onclick="alert('options');">sadsadasdsa</option>
+        <select id="selectid" onchange="checkAlert(event)">
+            <option id="op1" onclick="checkAlert(event)">asdas</option>
+            <option id="op1" onclick="checkAlert(event)">sadsadasdsa</option>
         </select>
     </body>
-    <script src="a2.js">
-        
-    </script>
 
+    <script>
+      function checkAlert(evt) {
+         alert(evt.target.value);
+  
+    }
+
+    </script>
+  
     
 </html>⏎

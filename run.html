@@ -18,59 +18,17 @@
     
       <div style="background-color: red;" id="silinebilir_dersler">a</div> 
             
-        
     
     </body>
 
-
-
-
     <script>
 
+      if (sessionStorage.selected_courses == null) {
 
-    var userAgent = navigator.userAgent;
-
-
-      var js_src="";
-
-      if (userAgent.includes("Chrome/")) {  // browser is chrome based
-            var chrome_version = userAgent.split("Chrome/")[1].split(" ")[0].split(".")[0]
-          
-            if (chrome_version >= 101) {
-              
-              js_src="chrome.js";
-              
-            }
-            else {
-                js_src = "firefox.js";
-            }
+        window.location.href = "index.html";
       }
-      else {
-        js_src = "firefox.js";
-      }
-
-    
-
-
-
-      //https://yazilim.cevapsitesi.com/Sorular/10/javascript-kullanarak-baska-bir-javascript-dosyasini-yuklemek
-
- 
-	// Sayfanın "head" etiketinin referansını al.
-	var head = document.getElementsByTagName('head')[0];
-	// Bir "script" etiketi oluştur.
-	var script = document.createElement('script');
-	script.type = 'text/javascript';
-	script.src = js_src;
-	// Etiket yüklendiğinde çalıştıralacak olan geri çağırma fonksiyonuna yuklendiFonksiyonu
-	// parametresini ata. Bu şekilde etiket yüklendiğinde parametre olarak bildirilen bu
-	// fonksiyon çalıştırılacak ve biz de yüklendiğinde işimize devam edebileceğiz.;
-
-	// Etiketi "head" etiketinin alt kontrollerine ekle.
-	head.appendChild(script);
-
- 
-
+    </script>
+    <script src="run.js">
 
     </script>
   
